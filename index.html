@@ -5,7 +5,7 @@
         <title>To-do App</title>
         <link href="styles/styles.css" rel="stylesheet">
         <link href="images/favicon.png?v=1" rel="icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="header">
@@ -18,18 +18,19 @@
         <div class="actions">
             <div class="actions__container">
                 <input id="search-text" class="input" type="text" placeholder="filter todos">
-                <label class="checkbox">
+                <button class="button" id="archived">Archived</button>
+                <!-- <label class="checkbox">
                     <input id="hide-completed" type="checkbox"> Hide completed
-                </label> 
+                </label> -->
             </div>
         </div>
         
         <div class="container">
-            <div id="todos"></div>
-            <form id="new-todo">
-                <input type="text" class="input" placeholder="Enter something to do" name="text">
-                <button class="button">Add Todo</button>
+            <form id="new-todo" class="todo-form">
+                <input type="text" class="input" placeholder="Enter something to do" name="text" id="add-todo-input">
+                <button class="button" id="add-todo-submit">Add Todo</button>
             </form>
+            <div id="todos"></div>
         </div>
 
 	<script src="scripts/todos.js"></script>

@@ -16,11 +16,18 @@ document.querySelector('#new-todo').addEventListener('submit', (e) => {
         renderTodos()
         e.target.elements.text.value = ''
     }
-}) 
+})
 
-document.querySelector('#hide-completed').addEventListener('change', (e) => {
+document.querySelector('#archived').addEventListener('click', () => {
+    const {searchText, archived} = getFilters()
+
+    document.querySelector('#archived').textContent = (archived) ? 'Archived' : 'Active'
+    document.querySelector('#add-todo-input').value = ''
+    document.querySelector('#add-todo-input').disabled = !archived
+    document.querySelector('#add-todo-submit').disabled = !archived
+
     setFilters({
-        hideCompleted: e.target.checked
+        archived: !archived
     })
     renderTodos()
 })
@@ -31,3 +38,5 @@ window.addEventListener('storage', (e) => {
         renderTodos()
     }
 })
+
+window.onload = checkStatus

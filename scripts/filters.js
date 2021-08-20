@@ -1,16 +1,16 @@
 const filters = {
     searchText: '',
-    hideCompleted: false 
+    archived: false 
 }
 
 const getFilters = () => filters
 
-const setFilters = ({ searchText, hideCompleted }) => {
+const setFilters = ({ searchText, archived }) => {
     if (typeof searchText === 'string') {
         filters.searchText = searchText
     }
-    if (typeof hideCompleted === 'boolean') {
-        filters.hideCompleted = hideCompleted
+    if (typeof archived === 'boolean') {
+        filters.archived = archived
     }
 }
 
